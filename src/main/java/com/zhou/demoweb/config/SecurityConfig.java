@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDecisionVoter;
+import org.springframework.security.access.vote.RoleVoter;
 import org.springframework.security.access.vote.UnanimousBased;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -86,7 +87,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         List<AccessDecisionVoter<? extends Object>> decisionVoters
                 = Arrays.asList(
                 new WebExpressionVoter(),
-                // new RoleVoter(),
+                new RoleVoter(),
                 new RoleBasedVoter());
         return new UnanimousBased(decisionVoters);
     }

@@ -34,3 +34,7 @@
 		int allowedSessions = getMaximumSessionsForThisUser(authentication);
 		因为当为1时和allowedSessions是相等的，因此要判断是否是当前机器登陆如果是 sessionCount会变为2
 		会执行allowableSessionsExceeded(session超过1后执行清理动作) 清空过期的session
+- 5.使用roles 增加角色权限无效 
+>new WebExpressionVoter() 不支持
+  我们自定义添加的url和权限映射（类不一样）  
+  ![tt](./image/支持映射类型.png)

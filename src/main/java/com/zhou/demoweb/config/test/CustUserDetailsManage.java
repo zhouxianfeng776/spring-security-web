@@ -45,7 +45,7 @@ public class CustUserDetailsManage implements UserDetailsService, InitializingBe
     @Override
     public void afterPropertiesSet() throws Exception {
         String password = passwordEncoder.encode("2");
-        User.UserBuilder build = User.withUsername("2").password(password).roles("USER1").authorities("test");
+        User.UserBuilder build = User.withUsername("2").password(password).roles("USER1").authorities("ROLE_USER1");
         map=new HashMap<>();
         map.put("2",build);
     }
